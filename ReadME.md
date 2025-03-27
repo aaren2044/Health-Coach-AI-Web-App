@@ -1,6 +1,6 @@
 # AI-Powered Personal Health Coach for Chronic Disease Management
 
-![Landing Page](<img/Landing Page.jpg>)  
+![Landing Page](<img/Landing Page.png>)  
 *Welcome screen showcasing app features and value proposition*
 
 ## Table of Contents
@@ -19,60 +19,60 @@
 ## Core Features
 
 ### Activity Dashboard
-![Activity Summary](<img/Activity Summary.jpg>)  
+![Activity Summary](<img/Activity Summary.png>)  
 *Comprehensive overview of daily health metrics and progress*
 
 ### Authentication Flow
-![Login](<img/Login.jpg>) ![Sign Up](<img/Sign Up.jpg>)  
+![Login](<img/Login.png>) ![Sign Up](<img/Sign Up.png>)  
 *Secure login with email verification and Google OAuth*
 
 ### Dashboard Overview
-![Dashboard-1](<img/Dashboard-1.jpg>) ![Dashboard-2](<img/Dashboard-2.jpg>)  
+![Dashboard-1](<img/Dashboard-1.png>) ![Dashboard-2](<img/Dashboard-2.png>)  
 *Personalized health metrics and quick navigation*
 
 ## Health Monitoring
 
 ### Vital Signs Tracking
-![Blood SpO2-1](<img/Blood SpO2-1.jpg>) ![Blood SpO2-2](<img/Blood SpO2-2.jpg>)  
-![Heart Rate](<img/Heart Rate.jpg>) ![Wrist Temperature-1](<img/Wrist Temperature-1.jpg>)  
+![Blood SpO2-1](<img/Blood SpO2-1.png>) ![Blood SpO2-2](<img/Blood SpO2-2.png>)  
+![Heart Rate](<img/Heart Rate.png>) ![Wrist Temperature-1](<img/Wrist Temperature-1.png>)  
 *Real-time monitoring of blood oxygen, heart rate and body temperature*
 
 ### Health Alerts
-![Monitoring](<img/Monitoring.jpg>)  
+![Monitoring](<img/Monitoring.png>)  
 *Proactive notifications for abnormal readings*
 
 ## Medication Management
 
-![Medication Scheduling](<img/Medication Scheduling.jpg>)  
+![Medication Scheduling](<img/Medication Scheduling.png>)  
 *Complete medication scheduler with dosage tracking*
 
 ## Exercise Analytics
 
-![Exercise Analysis-1](<img/Exercise Analysis-1.jpg>) ![Exercise Analysis-2](<img/Exercise Analysis-2.jpg>)  
-![Exercise Analysis-3](<img/Exercise Analysis-3.jpg>) ![Exercise](<img/Exercise.jpg>)  
+![Exercise Analysis-1](<img/Exercise Analysis-1.png>) ![Exercise Analysis-2](<img/Exercise Analysis-2.png>)  
+![Exercise Analysis-3](<img/Exercise Analysis-3.png>) ![Exercise](<img/Exercise.png>)  
 *Detailed workout performance breakdowns*
 
 ## Sleep & Nutrition
 
 ### Sleep Tracking
-![Sleep Analysis-1](<img/Sleep Analysis-1.jpg>) ![Sleep Analysis-2](<img/Sleep Analysis-2.jpg>)  
-![Sleep Analysis-3](<img/Sleep Analysis-3.jpg>)  
+![Sleep Analysis-1](<img/Sleep Analysis-1.png>) ![Sleep Analysis-2](<img/Sleep Analysis-2.png>)  
+![Sleep Analysis-3](<img/Sleep Analysis-3.png>)  
 *Sleep stage analysis and quality scoring*
 
 ### Diet Planning
-![Diet Plan](<img/Diet Plan.jpg>)  
+![Diet Plan](<img/Diet Plan.png>)  
 *Personalized meal recommendations*
 
 ## User Profiles
 
-![Profile-1](<img/Profile-1.jpg>) ![Profile-2](<img/Profile-2.jpg>)  
-![Profile-3](<img/Profile-3.jpg>) ![Profile-4](<img/Profile-4.jpg>)  
+![Profile-1](<img/Profile-1.png>) ![Profile-2](<img/Profile-2.png>)  
+![Profile-3](<img/Profile-3.png>) ![Profile-4](<img/Profile-4.png>)  
 *Complete health profile management*
 
 ## Additional Features
 
-![Chatur Guidance](<img/Chatur Guidance.jpg>) ![Telegram](<img/Telegram.jpg>)  
-![Documents](<img/Documents.jpg>) ![Weight-1](<img/Weight-1.jpg>) ![Weight-2](<img/Weight-2.jpg>)  
+![Chatur Guidance](<img/Chatur Guidance.png>) ![Telegram](<img/Telegram.png>)  
+![Documents](<img/Documents.png>) ![Weight-1](<img/Weight-1.png>) ![Weight-2](<img/Weight-2.png>)  
 *AI assistant, messaging integration and document storage*
 
 ## Technology Stack
