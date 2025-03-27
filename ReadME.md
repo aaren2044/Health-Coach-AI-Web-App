@@ -127,3 +127,16 @@ git clone https://github.com/aaren2044/Health-Coach-AI-Web-App
 cd ai-health-coach
 npm install
 npm run dev
+
+## Create a .env file 
+
+```bash
+VITE_SUPABASE_URL=
+VITE_SUPABASE_ANON_KEY=
+SUPABASE_URL=
+SUPABASE_ANON_KEY=
+VITE_GEMINI_API_KEY=
+VITE_GEMINI_API_URL=
+VITE_GEMINI_TEXT_MODEL=
+VITE_GEMINI_VISION_MODEL=
+VITE_GEMINI_API_VERSION=
