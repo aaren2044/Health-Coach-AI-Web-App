@@ -13,7 +13,7 @@ import {
 import { Loader2Icon } from "lucide-react-native";
 
 // IMPORTANT: Replace with your actual Gemini API key
-const GEMINI_API_KEY = "AIzaSyA1CDOiGtUbzihK8gj-8ud8SRkeQYovrEw";
+const GEMINI_API_KEY = "YOUR_API_KEY";
 
 // Rate limiting configuration
 const RATE_LIMIT = {
