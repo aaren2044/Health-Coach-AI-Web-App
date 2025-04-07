@@ -5,8 +5,9 @@
 The **AI-Powered Personal Health Coach for Chronic Disease Management** is a comprehensive mobile and web application designed to empower individuals with chronic health conditions like diabetes and hypertension. The app serves as an autonomous health assistant that integrates with wearable devices (such as smartwatches) to provide real-time guidance on medication management, exercise, diet planning, and health monitoring. By leveraging AI and wearable data, the app delivers personalized insights, improving patient adherence and overall health outcomes.
 
 **Value Proposition:**  
-- Increases patient adherence by 30%  
-- Reduces hospital visits by providing proactive, personalized care at home
+- **30% higher patient adherence** via AI-driven reminders & coaching
+- **Reduces hospital visits** through early anomaly detection
+- **Seamless wearable integration** (Apple Watch, Google Fit, etc.) for live health tracking  
 
 ---
 
@@ -36,6 +37,7 @@ The **AI-Powered Personal Health Coach for Chronic Disease Management** is a com
 ### Activity Dashboard
 ![Activity Summary](<img/Activity Summary.png>)  
 Comprehensive overview of daily health metrics and progress, enabling users to track their physical activity and energy expenditure.
+Real-time overview of **steps, calories burned, and active minutes** synced from wearables.
 
 ### Authentication Flow
 ![Login](<img/Login.png>) ![Sign Up](<img/Sign Up.png>)  
@@ -48,6 +50,11 @@ Personalized health metrics and quick navigation to core features such as medica
 ---
 
 ## Health Monitoring
+
+### **Heart Rate & ECG Tracking**
+![Heart Rate](img/Heart_Rate.png)  
+- **Real-time Apple Watch/Google Fit sync** for **continuous HR/ECG monitoring**.  
+- **AI-driven alerts** for irregular rhythms (e.g., atrial fibrillation).
 
 ### Vital Signs Tracking
 ![Blood SpO2-1](<img/Blood SpO2-1.png>) ![Blood SpO2-2](<img/Blood SpO2-2.png>)  
@@ -128,7 +135,7 @@ cd ai-health-coach
 npm install
 npm run dev
 
-## Create a .env file 
+## Configure .env file 
 
 ```bash
 VITE_SUPABASE_URL=
