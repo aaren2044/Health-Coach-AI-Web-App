@@ -1,97 +1,82 @@
 import express from 'express';
 import cors from 'cors';
-import jwt from 'jsonwebtoken';
-import dotenv from 'dotenv';
-import { createClient } from '@supabase/supabase-js';
-import bcrypt from 'bcryptjs';
-
-// Initialize environment variables
-dotenv.config();
+import { WebSocketServer } from 'ws';  // Correct named import
 
 const app = express();
+const PORT = 3000;
 
-// Middleware
+// Store heart rate data with timestamp
+let latestData = {
+  heartRate: null,
+  timestamp: null,
+  sampleCount: 0
+};
+
+// WebSocket Server
+const server = app.listen(PORT, () => {
+  console.log(`🚀 Server running at http://localhost:${PORT}`);
+});
+
+// Use WebSocketServer instead of WebSocket.Server
+const wss = new WebSocketServer({ server });
+
 app.use(cors());
 app.use(express.json());
 
-// Debugging: Check if environment variables are correctly loaded
-console.log('Supabase URL:', process.env.SUPABASE_URL);
-console.log('Supabase Anon Key:', process.env.SUPABASE_ANON_KEY);
-
-// Initialize Supabase Client
-const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_ANON_KEY);
-
-// Signup Route
-app.post('/api/signup', async (req, res) => {
+// Enhanced POST endpoint
+app.post('/api/heartrate', (req, res) => {
   try {
-    const { email, username, password, confirmPassword } = req.body;
-
-    // Additional server-side validation
-    if (password !== confirmPassword) {
-      return res.status(400).json({ message: 'Passwords do not match' });
+    const now = new Date();
+    
+    // Validate incoming data
+    if (!req.body || typeof req.body.heartRate === 'undefined') {
+      throw new Error('Invalid data format');
     }
 
-    // Check if the user already exists
-    const { data: existingUserEmail, error: emailError } = await supabase
-      .from('users')
-      .select('email')
-      .eq('email', email);
+    // Extract heart rate (handles both array and number formats)
+    const heartRate = Array.isArray(req.body.heartRate) 
+      ? req.body.heartRate[0] 
+      : req.body.heartRate;
 
-    const { data: existingUserUsername, error: usernameError } = await supabase
-      .from('users')
-      .select('username')
-      .eq('username', username);
-
-    if (emailError || usernameError) {
-      return res.status(400).json({ message: 'Error checking user existence' });
+    // Validate numeric range
+    if (typeof heartRate !== 'number' || heartRate < 30 || heartRate > 200) {
+      throw new Error(`Invalid heart rate value: ${heartRate}`);
     }
 
-    if (existingUserEmail.length > 0) {
-      return res.status(400).json({ message: 'Email already in use' });
-    }
+    // Update latest data
+    latestData = {
+      heartRate,
+      timestamp: req.body.timestamp || now.toISOString(),
+      sampleCount: latestData.sampleCount + 1
+    };
 
-    if (existingUserUsername.length > 0) {
-      return res.status(400).json({ message: 'Username already taken' });
-    }
-
-    // Hash password with salt rounds
-    const salt = await bcrypt.genSalt(12);
-    const hashedPassword = await bcrypt.hash(password, salt);
-
-    // Insert user data into Supabase (PostgreSQL table)
-    const { data: user, error } = await supabase
-      .from('users')
-      .insert([{ email, username, password: hashedPassword }])
-      .single();
-
-    if (error) {
-      return res.status(400).json({ message: error.message });
-    }
-
-    // Create JWT token for the user
-    const token = jwt.sign(
-      { id: user.id, email: user.email },
-      process.env.JWT_SECRET,
-      { expiresIn: '24h' }
-    );
-
-    // Return response with user and JWT token
-    res.status(201).json({
-      message: 'User created successfully',
-      token,
-      user: {
-        email: user.email,
-        username: user.username,
-      },
+    // Broadcast to all WebSocket clients
+    wss.clients.forEach(client => {
+      if (client.readyState === WebSocket.OPEN) {
+        client.send(JSON.stringify(latestData));
+      }
     });
 
+    console.log(`❤️ [${now.toLocaleTimeString()}] HR: ${heartRate} BPM (Sample #${latestData.sampleCount})`);
+    res.sendStatus(200);
+
   } catch (error) {
-    console.error('❌ Signup Error:', error);
-    res.status(500).json({ message: 'Server error during signup' });
+    console.error(`❌ Error: ${error.message}`);
+    res.status(400).json({ error: error.message });
   }
 });
 
-// Other routes (Login, etc.) remain unchanged...
+// GET endpoint with cache control
+app.get('/api/heartrate', (req, res) => {
+  res.set('Cache-Control', 'no-store');
+  res.json(latestData);
+});
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
+// Serve frontend
+app.use(express.static('../public'));
+
+// WebSocket connection handler
+wss.on('connection', (ws) => {
+  console.log('New client connected');
+  ws.send(JSON.stringify(latestData));
+});

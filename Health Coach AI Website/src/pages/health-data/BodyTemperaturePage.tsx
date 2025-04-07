@@ -13,7 +13,7 @@ import {
   TimeScale
 } from 'chart.js';
 import 'chartjs-adapter-date-fns';
-import supabase from '../supabaseClient';
+import supabase from '../../supabaseClient';
 
 ChartJS.register(
   CategoryScale,

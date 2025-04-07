@@ -1,48 +1,72 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Sun, Moon, Activity, User, ChevronDown, Globe } from "lucide-react";
+import { Sun, Moon, Activity, User, ChevronDown, Settings, LogOut, Languages } from "lucide-react";
 import { useTheme } from "../context/ThemeContext";
-import { useTranslation } from 'react-i18next';
 
-export default function Navbar({ isAuthenticated, onLogout }) {
+interface NavbarProps {
+  isAuthenticated: boolean;
+  onLogout: () => Promise<void>;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ isAuthenticated, onLogout }) => {
   const { theme, toggleTheme } = useTheme();
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const [languageDropdownOpen, setLanguageDropdownOpen] = useState(false);
-  const { t, i18n } = useTranslation();
+  const [translateOpen, setTranslateOpen] = useState(false);
 
-  const handleDropdownToggle = () => {
+  const handleDropdownToggle = (e: React.MouseEvent) => {
+    e.stopPropagation();
     setDropdownOpen((prev) => !prev);
   };
 
-  const handleLogout = () => {
-    onLogout();
-    setDropdownOpen(false);
+  const handleTranslateToggle = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setTranslateOpen((prev) => !prev);
   };
 
-  const changeLanguage = async (lng: string) => {
+  const handleLogout = async () => {
     try {
-      await i18n.changeLanguage(lng);
-      setLanguageDropdownOpen(false);
+      await onLogout();
+      setDropdownOpen(false);
     } catch (error) {
-      console.error('Error changing language:', error);
+      console.error('Logout failed:', error);
     }
   };
 
-  const languages = [
-    { code: 'en', name: 'English', flag: '🇬🇧' },
-    { code: 'es', name: 'Español', flag: '🇪🇸' },
-    { code: 'fr', name: 'Français', flag: '🇫🇷' },
-    { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
-    { code: 'zh', name: '中文', flag: '🇨🇳' },
-  ];
+  // Initialize Google Translate
+  useEffect(() => {
+    if (translateOpen) {
+      const script = document.createElement('script');
+      script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+      script.async = true;
+      document.body.appendChild(script);
 
-  const currentLanguage = languages.find(lang => lang.code === i18n.language) || languages[0];
+      (window as any).googleTranslateElementInit = () => {
+        new (window as any).google.translate.TranslateElement(
+          { 
+            pageLanguage: 'en',
+            layout: (window as any).google.translate.TranslateElement.InlineLayout.SIMPLE,
+            autoDisplay: false
+          },
+          'google_translate_element'
+        );
+      };
+
+      return () => {
+        document.body.removeChild(script);
+        // Remove the Google Translate dropdown if it exists
+        const googGtTT = document.getElementById('goog-gt-tt');
+        if (googGtTT) {
+          document.body.removeChild(googGtTT);
+        }
+      };
+    }
+  }, [translateOpen]);
 
   // Close dropdowns when clicking outside
   useEffect(() => {
     const handleClickOutside = () => {
       setDropdownOpen(false);
-      setLanguageDropdownOpen(false);
+      setTranslateOpen(false);
     };
 
     document.addEventListener('click', handleClickOutside);
@@ -53,56 +77,43 @@ export default function Navbar({ isAuthenticated, onLogout }) {
     <nav className="relative w-full bg-white dark:bg-gray-900 shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <Link to="/dashboard" className="flex items-center space-x-2" onClick={() => {
-            setDropdownOpen(false);
-            setLanguageDropdownOpen(false);
-          }}>
+          <Link 
+            to={isAuthenticated ? "/dashboard" : "/"} 
+            className="flex items-center space-x-2"
+            onClick={() => setDropdownOpen(false)}
+          >
             <Activity className="w-8 h-8 text-primary-from" />
             <span className="text-xl font-bold bg-gradient-to-r from-primary-from to-primary-to bg-clip-text text-transparent">
-              {t('app_name')}
+              Health Coach AI
             </span>
           </Link>
 
           <div className="flex items-center space-x-4">
+            {/* Google Translate Button */}
             <div className="relative">
               <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setLanguageDropdownOpen(!languageDropdownOpen);
-                }}
-                className="flex items-center space-x-1 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                onClick={handleTranslateToggle}
+                className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                aria-label="Translate"
               >
-                <Globe className="w-5 h-5 text-gray-700 dark:text-gray-200" />
-                <span className="text-sm font-medium">{currentLanguage.flag} {currentLanguage.code.toUpperCase()}</span>
-                <ChevronDown className={`w-4 h-4 transition-transform ${languageDropdownOpen ? 'rotate-180' : ''}`} />
+                <Languages className="w-5 h-5 text-blue-500" />
               </button>
-
-              {languageDropdownOpen && (
+              
+              {translateOpen && (
                 <div 
-                  className="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-lg shadow-lg z-50 py-1"
+                  className="absolute right-0 mt-2 bg-white dark:bg-gray-800 shadow-lg rounded-lg z-50 p-2"
                   onClick={(e) => e.stopPropagation()}
                 >
-                  {languages.map((language) => (
-                    <button
-                      key={language.code}
-                      onClick={() => changeLanguage(language.code)}
-                      className={`w-full text-left px-4 py-2 flex items-center space-x-2 ${
-                        i18n.language === language.code
-                          ? 'bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-400'
-                          : 'hover:bg-gray-100 dark:hover:bg-gray-700'
-                      }`}
-                    >
-                      <span className="text-lg">{language.flag}</span>
-                      <span>{language.name}</span>
-                    </button>
-                  ))}
+                  <div id="google_translate_element"></div>
                 </div>
               )}
             </div>
 
+            {/* Theme Toggle */}
             <button
               onClick={toggleTheme}
               className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+              aria-label="Toggle theme"
             >
               {theme === "dark" ? (
                 <Sun className="w-5 h-5 text-yellow-500" />
@@ -111,35 +122,46 @@ export default function Navbar({ isAuthenticated, onLogout }) {
               )}
             </button>
 
+            {/* User Menu */}
             {isAuthenticated ? (
               <div className="relative">
                 <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    handleDropdownToggle();
-                  }}
+                  onClick={handleDropdownToggle}
                   className="flex items-center p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                  aria-label="User menu"
                 >
-                  <User className="w-5 h-5 text-gray-700 dark:text-gray-200" />
+                  <div className="w-8 h-8 rounded-full bg-gradient-to-r from-primary-from to-primary-to flex items-center justify-center">
+                    <User className="w-4 h-4 text-white" />
+                  </div>
                 </button>
 
                 {dropdownOpen && (
                   <div 
-                    className="absolute right-0 bg-white dark:bg-gray-800 shadow-lg rounded-lg z-50 mt-2 w-40"
+                    className="absolute right-0 bg-white dark:bg-gray-800 shadow-lg rounded-lg z-50 mt-2 w-48"
                     onClick={(e) => e.stopPropagation()}
                   >
                     <Link
                       to="/profile"
-                      className="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+                      className="flex items-center px-4 py-3 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
                       onClick={() => setDropdownOpen(false)}
                     >
-                      {t('view_profile')}
+                      <User className="w-4 h-4 mr-2" />
+                      View Profile
+                    </Link>
+                    <Link
+                      to="/profile-setup"
+                      className="flex items-center px-4 py-3 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                      onClick={() => setDropdownOpen(false)}
+                    >
+                      <Settings className="w-4 h-4 mr-2" />
+                      Settings
                     </Link>
                     <button
                       onClick={handleLogout}
-                      className="block w-full text-left px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+                      className="flex items-center w-full text-left px-4 py-3 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
                     >
-                      {t('log_out')}
+                      <LogOut className="w-4 h-4 mr-2" />
+                      Log Out
                     </button>
                   </div>
                 )}
@@ -150,13 +172,13 @@ export default function Navbar({ isAuthenticated, onLogout }) {
                   to="/login"
                   className="px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-primary-from dark:hover:text-primary-to transition-colors"
                 >
-                  {t('login')}
+                  Login
                 </Link>
                 <Link
                   to="/signup"
                   className="px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-primary-from to-primary-to rounded-lg hover:opacity-90 transition-opacity"
                 >
-                  {t('sign_up')}
+                  Sign Up
                 </Link>
               </>
             )}
@@ -165,4 +187,6 @@ export default function Navbar({ isAuthenticated, onLogout }) {
       </div>
     </nav>
   );
-}
+};
+
+export default Navbar;

@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Lock, Mail } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-hot-toast";
-import supabase from "../supabaseClient";
+import supabase from "../../supabaseClient";
 
 export default function LoginPage() {
   const navigate = useNavigate();
@@ -34,7 +34,7 @@ export default function LoginPage() {
         await checkOrCreateUserProfile(data.user.id, email);
 
         // ✅ Redirect to profile page
-        navigate("/profile");
+        navigate("/dashboard");
       }
     } catch (error) {
       console.error("Error in login:", error);

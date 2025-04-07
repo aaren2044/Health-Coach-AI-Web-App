@@ -43,7 +43,7 @@ const MonitoringDashboard = () => {
       icon: <Activity className="w-8 h-8 text-green-500" />,
       description: 'View your daily activity metrics',
       bgColor: 'bg-green-50 dark:bg-green-900/20',
-      link: '/monitoring/activity'
+      link: '/monitoring/exercise'
     },
     {
       id: 'temperature',

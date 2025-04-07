@@ -1,8 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { FileText, Image, Upload, Trash2, ChevronDown, ChevronUp } from 'lucide-react';
 import { motion } from 'framer-motion';
-import supabase from '../supabaseClient';
-import useAuth from '../hooks/useAuth';
+import supabase from '../../supabaseClient';
+import useAuth from '../../hooks/useAuth';
 
 interface Document {
   id: string;

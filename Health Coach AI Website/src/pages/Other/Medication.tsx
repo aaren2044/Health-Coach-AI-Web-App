@@ -3,7 +3,7 @@ import { Loader2, PlusCircle, Calendar, Clock, AlertCircle, Pill, Edit, Trash2 }
 import { motion } from 'framer-motion';
 import toast from 'react-hot-toast';
 import { createClient } from '@supabase/supabase-js';
-import useAuth from '../hooks/useAuth';
+import useAuth from '../../hooks/useAuth';
 
 const supabase = createClient(
   import.meta.env.VITE_SUPABASE_URL || '',

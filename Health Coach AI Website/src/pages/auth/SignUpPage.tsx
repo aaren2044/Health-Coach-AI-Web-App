@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { UserPlus, Lock, Mail } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-hot-toast';
-import supabase from '../supabaseClient';
+import supabase from '../../supabaseClient';
 
 export default function SignUpPage() {
   const navigate = useNavigate();
