@@ -126,6 +126,75 @@ AI assistant, messaging integration, and document storage for medical reports an
 - Telegram Bot API
 
 ---
+## Mobile App Overview
+
+The *AI-Powered Personal Health Coach – Mobile App* (built with *React Native) brings the full platform to your pocket, offering **real-time health insights, **AI-driven assistance, and **sensor-based monitoring* to support chronic disease management like diabetes and hypertension.
+
+---
+
+### Key Features
+
+- *Live Health Dashboard*  
+  Monitor *steps, **heart rate, **SpO2, **temperature* via *Google Fit* / *Apple HealthKit*.
+
+- *AI Task Planner*  
+  Smart *calendar, **to-do list, and intelligent reminders for **meds, **workouts, and **doctor visits*.
+
+- *Community Support*  
+  Chat with users who have similar conditions, share advice, and support recovery together.
+
+- *Emergency Helpline & SOS*  
+  One-tap help with *auto SOS trigger* during *falls* or *abnormal health alerts*.
+
+- *SmartCam*  
+  Upload *medical reports, **prescriptions* – processed by *AI* for insights and stored securely.
+
+- *AI Chatbot Assistant*  
+  24/7 help for *symptoms, **diet, **fitness tips* powered by *Gemini AI*.
+
+- *Nearby Services Map*  
+  Locate nearby *clinics, **pharmacies, and **gyms* using real-time *orientation & path detection*.
+
+- *Health Articles*  
+  Get personalized health & wellness content tailored to your condition.
+
+---
+
+### Sensor Integration
+
+| Sensor          | Features                                               |
+|-----------------|--------------------------------------------------------|
+| Accelerometer   | Fall detection, emergency motion triggers              |
+| Gyroscope       | Posture correction, exercise precision                 |
+| Pedometer       | Step tracking, movement history                        |
+| Barometer       | Breathing patterns, stress level, elevation tracking  |
+| DeviceMotion    | Full-body motion accuracy for workouts & alerting     |
+| Magnetometer    | Orientation-based navigation (indoor/outdoor)         |
+| Light Sensor    | Auto brightness, ambient light awareness               |
+
+---
+
+### Tech Stack
+
+- *React Native*  
+- *Gemini AI (Google)* – Chatbot, Smart Suggestions  
+- *Supabase* – Realtime DB, Auth, File Storage  
+- *Google Fit * – Wearable integration  
+- *Flask + TensorFlow Lite* – Backend & AI Model Integration  
+
+---
+
+### Benefits
+
+- *Personalized health coaching* anywhere, anytime  
+- *Real-time alerts* powered by sensors  
+- Encourages *adherence* & reduces hospitalizations  
+- Fully supports *wearable devices* and *offline access*
+
+---
+
+### Video
+
 
 ## Installation
 
