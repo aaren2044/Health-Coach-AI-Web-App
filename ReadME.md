@@ -102,7 +102,46 @@ Complete health profile management where users can add personal details, medicat
 
 ## Additional Features
 
-![Chatur Guidance](<img/Chatur Guidance.png>) ![Telegram](<img/Telegram.png>)  
+## Additional Features
+
+![Telegram](<img/Telegram.png>)  
+![Documents](<img/Documents.png>) ![Weight-1](<img/Weight-1.png>) ![Weight-2](<img/Weight-2.png>)  
+AI assistant, messaging integration, and document storage for medical reports and prescriptions.
+
+---
+
+### 🤖 Telegram Bot Integration
+
+![Telegram Bot](<img/Telegram.png>)
+
+Our AI-powered **Telegram bot** brings personalized health coaching to your favorite messaging app:
+
+- 📩 **Smart Reminders:** Get medication, doctor, workout, and sleep reminders directly in Telegram.  
+- 🧠 **AI Chat Support (Gemini):** Ask symptom-related questions, get diet & fitness advice 24/7 using Gemini AI.  
+- 🚨 **Emergency Alerts:** Automatically notify your emergency contacts during falls or abnormal health readings.  
+- 📁 **Document Upload:** Upload prescriptions and reports securely via chat—stored with AI labeling on Supabase.  
+- 💬 **Community Support:** Join health-focused Telegram groups to share experiences and recovery tips.
+
+🔗 **Start Chatting:** 
+
+🔗 **Start Chatting:** [@MedGuardian Bot](https://t.me/MedGuardian_bot)  
+![MedGuardian Bot](https://github.com/user-attachments/assets/13254c0c-adcb-4d57-8e54-3f132ba03ae4)
+
+🔗 **Meal Planner Bot:** [@Diet Bot](https://t.me/MedGuardianDietBot)  
+![Diet Bot](https://github.com/user-attachments/assets/60764302-b432-4bfc-ba11-194491cb713e)
+
+🔗 **Daily Task Assistant:** [@DailyTask Bot](https://t.me/MedGaurdianDaily_bot)  
+![DailyTask Bot](https://github.com/user-attachments/assets/c6264b84-ae74-4550-8367-3ea551405981)
+
+> 💬 These bots offer reminders, meal plans, task scheduling, and more — all synced with your health profile!
+
+
+> 🛡️ All bots are connected to your profile for secure, AI-personalized health assistance.
+
+
+
+🛡️ End-to-end encrypted, linked with your profile for personalized insights.
+ 
 ![Documents](<img/Documents.png>) ![Weight-1](<img/Weight-1.png>) ![Weight-2](<img/Weight-2.png>)  
 AI assistant, messaging integration, and document storage for medical reports and prescriptions.
 
