@@ -5,8 +5,9 @@
 The **AI-Powered Personal Health Coach for Chronic Disease Management** is a comprehensive mobile and web application designed to empower individuals with chronic health conditions like diabetes and hypertension. The app serves as an autonomous health assistant that integrates with wearable devices (such as smartwatches) to provide real-time guidance on medication management, exercise, diet planning, and health monitoring. By leveraging AI and wearable data, the app delivers personalized insights, improving patient adherence and overall health outcomes.
 
 **Value Proposition:**  
-- Increases patient adherence by 30%  
-- Reduces hospital visits by providing proactive, personalized care at home
+- **30% higher patient adherence** via AI-driven reminders & coaching
+- **Reduces hospital visits** through early anomaly detection
+- **Seamless wearable integration** (Apple Watch, Google Fit, etc.) for live health tracking  
 
 ---
 
@@ -36,6 +37,7 @@ The **AI-Powered Personal Health Coach for Chronic Disease Management** is a com
 ### Activity Dashboard
 ![Activity Summary](<img/Activity Summary.png>)  
 Comprehensive overview of daily health metrics and progress, enabling users to track their physical activity and energy expenditure.
+Real-time overview of **steps, calories burned, and active minutes** synced from wearables.
 
 ### Authentication Flow
 ![Login](<img/Login.png>) ![Sign Up](<img/Sign Up.png>)  
@@ -48,6 +50,11 @@ Personalized health metrics and quick navigation to core features such as medica
 ---
 
 ## Health Monitoring
+
+### **Heart Rate & ECG Tracking**
+![Heart Rate](img/Heart_Rate.png)  
+- **Real-time Apple Watch/Google Fit sync** for **continuous HR/ECG monitoring**.  
+- **AI-driven alerts** for irregular rhythms (e.g., atrial fibrillation).
 
 ### Vital Signs Tracking
 ![Blood SpO2-1](<img/Blood SpO2-1.png>) ![Blood SpO2-2](<img/Blood SpO2-2.png>)  
@@ -95,7 +102,46 @@ Complete health profile management where users can add personal details, medicat
 
 ## Additional Features
 
-![Chatur Guidance](<img/Chatur Guidance.png>) ![Telegram](<img/Telegram.png>)  
+## Additional Features
+
+![Telegram](<img/Telegram.png>)  
+![Documents](<img/Documents.png>) ![Weight-1](<img/Weight-1.png>) ![Weight-2](<img/Weight-2.png>)  
+AI assistant, messaging integration, and document storage for medical reports and prescriptions.
+
+---
+
+### 🤖 Telegram Bot Integration
+
+![Telegram Bot](<img/Telegram.png>)
+
+Our AI-powered **Telegram bot** brings personalized health coaching to your favorite messaging app:
+
+- 📩 **Smart Reminders:** Get medication, doctor, workout, and sleep reminders directly in Telegram.  
+- 🧠 **AI Chat Support (Gemini):** Ask symptom-related questions, get diet & fitness advice 24/7 using Gemini AI.  
+- 🚨 **Emergency Alerts:** Automatically notify your emergency contacts during falls or abnormal health readings.  
+- 📁 **Document Upload:** Upload prescriptions and reports securely via chat—stored with AI labeling on Supabase.  
+- 💬 **Community Support:** Join health-focused Telegram groups to share experiences and recovery tips.
+
+🔗 **Start Chatting:** 
+
+🔗 **Start Chatting:** [@MedGuardian Bot](https://t.me/MedGuardian_bot)  
+![MedGuardian Bot](https://github.com/user-attachments/assets/13254c0c-adcb-4d57-8e54-3f132ba03ae4)
+
+🔗 **Meal Planner Bot:** [@Diet Bot](https://t.me/MedGuardianDietBot)  
+![Diet Bot](https://github.com/user-attachments/assets/60764302-b432-4bfc-ba11-194491cb713e)
+
+🔗 **Daily Task Assistant:** [@DailyTask Bot](https://t.me/MedGaurdianDaily_bot)  
+![DailyTask Bot](https://github.com/user-attachments/assets/c6264b84-ae74-4550-8367-3ea551405981)
+
+> 💬 These bots offer reminders, meal plans, task scheduling, and more — all synced with your health profile!
+
+
+> 🛡️ All bots are connected to your profile for secure, AI-personalized health assistance.
+
+
+
+🛡️ End-to-end encrypted, linked with your profile for personalized insights.
+ 
 ![Documents](<img/Documents.png>) ![Weight-1](<img/Weight-1.png>) ![Weight-2](<img/Weight-2.png>)  
 AI assistant, messaging integration, and document storage for medical reports and prescriptions.
 
@@ -119,6 +165,75 @@ AI assistant, messaging integration, and document storage for medical reports an
 - Telegram Bot API
 
 ---
+## Mobile App Overview
+
+The *AI-Powered Personal Health Coach – Mobile App* (built with *React Native) brings the full platform to your pocket, offering **real-time health insights, **AI-driven assistance, and **sensor-based monitoring* to support chronic disease management like diabetes and hypertension.
+
+---
+
+### Key Features
+
+- *Live Health Dashboard*  
+  Monitor *steps, **heart rate, **SpO2, **temperature* via *Google Fit* / *Apple HealthKit*.
+
+- *AI Task Planner*  
+  Smart *calendar, **to-do list, and intelligent reminders for **meds, **workouts, and **doctor visits*.
+
+- *Community Support*  
+  Chat with users who have similar conditions, share advice, and support recovery together.
+
+- *Emergency Helpline & SOS*  
+  One-tap help with *auto SOS trigger* during *falls* or *abnormal health alerts*.
+
+- *SmartCam*  
+  Upload *medical reports, **prescriptions* – processed by *AI* for insights and stored securely.
+
+- *AI Chatbot Assistant*  
+  24/7 help for *symptoms, **diet, **fitness tips* powered by *Gemini AI*.
+
+- *Nearby Services Map*  
+  Locate nearby *clinics, **pharmacies, and **gyms* using real-time *orientation & path detection*.
+
+- *Health Articles*  
+  Get personalized health & wellness content tailored to your condition.
+
+---
+
+### Sensor Integration
+
+| Sensor          | Features                                               |
+|-----------------|--------------------------------------------------------|
+| Accelerometer   | Fall detection, emergency motion triggers              |
+| Gyroscope       | Posture correction, exercise precision                 |
+| Pedometer       | Step tracking, movement history                        |
+| Barometer       | Breathing patterns, stress level, elevation tracking  |
+| DeviceMotion    | Full-body motion accuracy for workouts & alerting     |
+| Magnetometer    | Orientation-based navigation (indoor/outdoor)         |
+| Light Sensor    | Auto brightness, ambient light awareness               |
+
+---
+
+### Tech Stack
+
+- *React Native*  
+- *Gemini AI (Google)* – Chatbot, Smart Suggestions  
+- *Supabase* – Realtime DB, Auth, File Storage  
+- *Google Fit * – Wearable integration  
+- *Flask + TensorFlow Lite* – Backend & AI Model Integration  
+
+---
+
+### Benefits
+
+- *Personalized health coaching* anywhere, anytime  
+- *Real-time alerts* powered by sensors  
+- Encourages *adherence* & reduces hospitalizations  
+- Fully supports *wearable devices* and *offline access*
+
+---
+
+### Video
+
 
 ## Installation
 
@@ -128,7 +243,7 @@ cd ai-health-coach
 npm install
 npm run dev
 
-## Create a .env file 
+## Configure .env file 
 
 ```bash
 VITE_SUPABASE_URL=
