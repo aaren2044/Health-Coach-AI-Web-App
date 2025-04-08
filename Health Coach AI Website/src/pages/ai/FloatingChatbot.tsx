@@ -13,7 +13,7 @@ const FloatingChatbot = () => {
 
   // Get configuration from environment variables
   const API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
-  const API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyAILbWN9EAoj8S2hzYQRhIgtdM3--a5EI0';
+  const API_URL = 'YOUR_API_KEY';
   const FULL_API_URL = `${API_URL}?key=${API_KEY}`;
 
   const toggleChat = () => setIsOpen(!isOpen);
