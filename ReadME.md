@@ -1,4 +1,3 @@
-# AI-Powered Personal Health Coach for Chronic Disease Management
 
 ## Overview
 
@@ -232,7 +231,36 @@ The *AI-Powered Personal Health Coach – Mobile App* (built with *React Native)
 
 ---
 
-### Video
+### App images
+1 Home Screen 🏠
+![image](https://github.com/user-attachments/assets/a8117995-b180-4db0-bf13-0261f3607b19)
+---
+
+2 Profile 📋
+![image](https://github.com/user-attachments/assets/2c9c2c6b-9d1e-48c8-a1a7-d887dd626476)
+---
+3 Ai-Chat 💬
+![image](https://github.com/user-attachments/assets/c25085e5-f2b3-4155-adfe-47712352edc9)
+---
+4 AI Diet Planner 🍏
+![image](https://github.com/user-attachments/assets/d36de50b-012e-4d13-b4de-8e9889cd47b1)
+---
+5 Smart Camera (OCR) 📷
+![WhatsApp Image 2025-04-09 at 10 10 35_b225a51a](https://github.com/user-attachments/assets/610d1b68-0a8a-49e0-9cbf-6ddd89ba9e0a)
+---
+5 Hydration Tracker 💧
+![image](https://github.com/user-attachments/assets/90df12ff-9b43-4714-a239-e4e283dfa130)
+---
+6 Step & Calorie Tracker 🚶‍♂️🔥
+![image](https://github.com/user-attachments/assets/463f1dad-41f6-4c94-b6ca-e9eedae21f1b)
+---
+
+
+
+
+
+
+
 
 
 ## Installation
