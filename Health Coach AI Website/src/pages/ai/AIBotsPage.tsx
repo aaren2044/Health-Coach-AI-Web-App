@@ -29,6 +29,14 @@ const bots = [
     description: 'Helps you maintain healthy daily routines and habits',
     link: 'https://web.telegram.org/k/#@MedGaurdianDaily_bot',
     color: 'from-purple-500 to-pink-500'
+  },
+  {
+    id: 'ExerciseBot',
+    icon: RiRobot2Line,
+    name: 'ExerciseBot',
+    description: 'Your personal workout and exercise planner',
+    link: 'https://web.telegram.org/k/#@medExerciseBot',
+    color: 'from-orange-500 to-yellow-500'
   }
 ];
 
