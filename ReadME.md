@@ -1,11 +1,10 @@
-
 ## Overview
 
 The **AI-Powered Personal Health Coach for Chronic Disease Management** is a comprehensive mobile and web application designed to empower individuals with chronic health conditions like diabetes and hypertension. The app serves as an autonomous health assistant that integrates with wearable devices (such as smartwatches) to provide real-time guidance on medication management, exercise, diet planning, and health monitoring. By leveraging AI and wearable data, the app delivers personalized insights, improving patient adherence and overall health outcomes.
 
 **Value Proposition:**  
-- **30% higher patient adherence** via AI-driven reminders & coaching
-- **Reduces hospital visits** through early anomaly detection
+- **30% higher patient adherence** via AI-driven reminders & coaching  
+- **Reduces hospital visits** through early anomaly detection  
 - **Seamless wearable integration** (Apple Watch, Google Fit, etc.) for live health tracking  
 
 ---
@@ -25,7 +24,7 @@ The **AI-Powered Personal Health Coach for Chronic Disease Management** is a com
    - [Sleep Tracking](#sleep-tracking)  
    - [Diet Planning](#diet-planning)  
 6. [User Profiles](#user-profiles)  
-7. [Additional Features](#additional-features)  
+7. [Telegram Bots](#telegram-bots)  
 8. [Technology Stack](#technology-stack)  
 9. [Installation](#installation)  
 
@@ -35,7 +34,7 @@ The **AI-Powered Personal Health Coach for Chronic Disease Management** is a com
 
 ### Activity Dashboard
 ![Activity Summary](<img/Activity Summary.png>)  
-Comprehensive overview of daily health metrics and progress, enabling users to track their physical activity and energy expenditure.
+Comprehensive overview of daily health metrics and progress, enabling users to track their physical activity and energy expenditure.  
 Real-time overview of **steps, calories burned, and active minutes** synced from wearables.
 
 ### Authentication Flow
@@ -99,50 +98,33 @@ Complete health profile management where users can add personal details, medicat
 
 ---
 
-## Additional Features
+## Telegram Bots
 
-## Additional Features
-
-![Telegram](<img/Telegram.png>)  
-![Documents](<img/Documents.png>) ![Weight-1](<img/Weight-1.png>) ![Weight-2](<img/Weight-2.png>)  
-AI assistant, messaging integration, and document storage for medical reports and prescriptions.
-
----
-
-### 🤖 Telegram Bot Integration
-
-![Telegram Bot](<img/Telegram.png>)
-
-Our AI-powered **Telegram bot** brings personalized health coaching to your favorite messaging app:
-
-- 📩 **Smart Reminders:** Get medication, doctor, workout, and sleep reminders directly in Telegram.  
-- 🧠 **AI Chat Support (Gemini):** Ask symptom-related questions, get diet & fitness advice 24/7 using Gemini AI.  
-- 🚨 **Emergency Alerts:** Automatically notify your emergency contacts during falls or abnormal health readings.  
-- 📁 **Document Upload:** Upload prescriptions and reports securely via chat—stored with AI labeling on Supabase.  
-- 💬 **Community Support:** Join health-focused Telegram groups to share experiences and recovery tips.
-
-🔗 **Start Chatting:** 
-
-🔗 **Start Chatting:** [@MedGuardian Bot](https://t.me/MedGuardian_bot)  
+### 🤖 My Medicine – [@MedGuardian Bot](https://t.me/MedGuardian_bot)
 ![MedGuardian Bot](https://github.com/user-attachments/assets/13254c0c-adcb-4d57-8e54-3f132ba03ae4)
+- **Smart Reminders:** Medication, doctor appointments, workout, and sleep reminders
+- **Emergency Alerts:** Automatic SOS notifications during falls or abnormal readings
+- **Document Upload:** Securely store prescriptions and medical reports via chat
+- **24/7 Support:** AI assistant powered by Gemini for health Q&A
 
-🔗 **Meal Planner Bot:** [@Diet Bot](https://t.me/MedGuardianDietBot)  
+### 🍽️ My Diet – [@Diet Bot](https://t.me/MedGuardianDietBot)
 ![Diet Bot](https://github.com/user-attachments/assets/60764302-b432-4bfc-ba11-194491cb713e)
+- **AI Diet Coach:** Personalized meal planning based on your profile and health conditions
+- **Daily Suggestions:** Get tailored diet charts with nutritional values
+- **Food Logging:** Log meals with SmartCam and get instant calorie analysis
 
-🔗 **Daily Task Assistant:** [@DailyTask Bot](https://t.me/MedGaurdianDaily_bot)  
+### 🏋️ My Exercise – [@MedGuardian Bot](https://t.me/MedGuardian_bot)
+![image](https://github.com/user-attachments/assets/de4697b9-6563-4aac-ba85-0dacf248bfbb)
+![image](https://github.com/user-attachments/assets/8ab0f097-c684-4b98-b9db-23ea0c044b0b)
+- **AI Workout Generator:** Daily routines tailored to your health status
+- **Progress Tracker:** View stats, calories burned, heart rate zones
+- **Posture Monitoring:** Real-time posture correction tips via sensor input
+
+### 🗓️ My Task – [@DailyTask Bot](https://t.me/MedGaurdianDaily_bot)
 ![DailyTask Bot](https://github.com/user-attachments/assets/c6264b84-ae74-4550-8367-3ea551405981)
-
-> 💬 These bots offer reminders, meal plans, task scheduling, and more — all synced with your health profile!
-
-
-> 🛡️ All bots are connected to your profile for secure, AI-personalized health assistance.
-
-
-
-🛡️ End-to-end encrypted, linked with your profile for personalized insights.
- 
-![Documents](<img/Documents.png>) ![Weight-1](<img/Weight-1.png>) ![Weight-2](<img/Weight-2.png>)  
-AI assistant, messaging integration, and document storage for medical reports and prescriptions.
+- **Daily Planner:** Organize your day with intelligent task reminders
+- **Health Integration:** Syncs with meds, exercises, and doctor appointments
+- **Custom Notifications:** AI learns your patterns and suggests optimal routines
 
 ---
 
@@ -164,9 +146,10 @@ AI assistant, messaging integration, and document storage for medical reports an
 - Telegram Bot API
 
 ---
+
 ## Mobile App Overview
 
-The *AI-Powered Personal Health Coach – Mobile App* (built with *React Native) brings the full platform to your pocket, offering **real-time health insights, **AI-driven assistance, and **sensor-based monitoring* to support chronic disease management like diabetes and hypertension.
+The *AI-Powered Personal Health Coach – Mobile App* (built with *React Native*) brings the full platform to your pocket, offering **real-time health insights**, **AI-driven assistance**, and **sensor-based monitoring** to support chronic disease management like diabetes and hypertension.
 
 ---
 
@@ -217,51 +200,35 @@ The *AI-Powered Personal Health Coach – Mobile App* (built with *React Native)
 - *React Native*  
 - *Gemini AI (Google)* – Chatbot, Smart Suggestions  
 - *Supabase* – Realtime DB, Auth, File Storage  
-- *Google Fit * – Wearable integration  
+- *Google Fit* – Wearable integration  
 - *Flask + TensorFlow Lite* – Backend & AI Model Integration  
 
 ---
 
-### Benefits
+### App Images
 
-- *Personalized health coaching* anywhere, anytime  
-- *Real-time alerts* powered by sensors  
-- Encourages *adherence* & reduces hospitalizations  
-- Fully supports *wearable devices* and *offline access*
-
----
-
-### App images
-1 Home Screen 🏠
+1. Home Screen 🏠  
 ![image](https://github.com/user-attachments/assets/a8117995-b180-4db0-bf13-0261f3607b19)
----
 
-2 Profile 📋
+2. Profile 📋  
 ![image](https://github.com/user-attachments/assets/2c9c2c6b-9d1e-48c8-a1a7-d887dd626476)
----
-3 Ai-Chat 💬
+
+3. Ai-Chat 💬  
 ![image](https://github.com/user-attachments/assets/c25085e5-f2b3-4155-adfe-47712352edc9)
----
-4 AI Diet Planner 🍏
+
+4. AI Diet Planner 🍏  
 ![image](https://github.com/user-attachments/assets/d36de50b-012e-4d13-b4de-8e9889cd47b1)
----
-5 Smart Camera (OCR) 📷
+
+5. Smart Camera (OCR) 📷  
 ![WhatsApp Image 2025-04-09 at 10 10 35_b225a51a](https://github.com/user-attachments/assets/610d1b68-0a8a-49e0-9cbf-6ddd89ba9e0a)
----
-5 Hydration Tracker 💧
+
+6. Hydration Tracker 💧  
 ![image](https://github.com/user-attachments/assets/90df12ff-9b43-4714-a239-e4e283dfa130)
----
-6 Step & Calorie Tracker 🚶‍♂️🔥
+
+7. Step & Calorie Tracker 🚶‍♂️🔥  
 ![image](https://github.com/user-attachments/assets/463f1dad-41f6-4c94-b6ca-e9eedae21f1b)
+
 ---
-
-
-
-
-
-
-
-
 
 ## Installation
 
@@ -270,8 +237,9 @@ git clone https://github.com/aaren2044/Health-Coach-AI-Web-App
 cd ai-health-coach
 npm install
 npm run dev
+```
 
-## Configure .env file 
+## Configure .env file  
 
 ```bash
 VITE_SUPABASE_URL=
@@ -283,3 +251,5 @@ VITE_GEMINI_API_URL=
 VITE_GEMINI_TEXT_MODEL=
 VITE_GEMINI_VISION_MODEL=
 VITE_GEMINI_API_VERSION=
+```
+
